@@ -1,0 +1,47 @@
+{
+  "name": "action-install-appium",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Install the Appium in a GitHub Actions build environment",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map --license licenses.txt && cp action.yml README.md dist/",
+    "test": "jest --passWithNoTests",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FinbertMDS/setup-appium.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup",
+    "appium"
+  ],
+  "author": "FinbertMDS",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.9",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@vercel/ncc": "^0.25.1",
+    "eslint": "^7.24.0",
+    "eslint-plugin-github": "^4.1.1",
+    "eslint-plugin-jest": "^24.3.5",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
+    "js-yaml": "^4.1.0",
+    "prettier": "2.2.1",
+    "ts-jest": "^26.5.5",
+    "typescript": "^4.1.3"
+  }
+}
