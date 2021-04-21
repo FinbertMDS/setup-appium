@@ -1,0 +1,10 @@
+name: 'Install Appium'
+description: 'Install the Appium in a GitHub Actions build environment'
+author: 'FinbertMDS'
+inputs:
+  appium-version:
+    description: "Version of the Appium to install, or 'latest' (default)."
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
