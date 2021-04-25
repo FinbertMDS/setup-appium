@@ -2,6 +2,13 @@ name: 'build-test'
 on:
   pull_request:
   push:
+    branches:
+      - master
+    paths:
+    - "src/**"
+    - "action.yml"
+    - "README.md"
+    - "package.json"
 
 jobs:
   build:
