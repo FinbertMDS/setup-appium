@@ -1,5 +1,5 @@
-import * as core from '@actions/core'
-import * as exec from '@actions/exec'
+import * as core from '@actions/core';
+import * as exec from '@actions/exec';
 import * as os from "os";
 
 async function run(): Promise<void> {
@@ -26,7 +26,7 @@ async function run(): Promise<void> {
       await exec.exec('npm install -g appium --unsafe-perm=true --allow-root');
     }
     core.info('appium has been installed.');
-  } catch (error) {
+  } catch (error: any) {
     core.setFailed(error.message)
   }
 }
