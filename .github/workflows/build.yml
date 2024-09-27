@@ -17,10 +17,10 @@ jobs:
         os: [ubuntu, macos, windows]
     runs-on: ${{ matrix.os }}-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
       - run: npm install
       - run: npm run build && npm run package
@@ -31,12 +31,12 @@ jobs:
     needs: [build]
     if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: 'latest'
           path: 'dist'
@@ -69,14 +69,12 @@ jobs:
     runs-on: macos-latest
     needs: [deploy]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
       - name: Install Appium
         uses: FinbertMDS/setup-appium@latest
-        with:
-          appium-version: "1.20.2"
       - run: appium -v
