@@ -11,9 +11,9 @@ Install the latest version of the Appium:
 
 ```yaml
 - name: Use Node.js
-  uses: actions/setup-node@v1
+  uses: actions/setup-node@v4
   with:
-    node-version: '12.x'
+    node-version: 20
 - name: Install Appium
   uses: FinbertMDS/setup-appium@latest
 ```
@@ -22,9 +22,9 @@ Install a specific version of the Appium:
 
 ```yaml
 - name: Use Node.js
-  uses: actions/setup-node@v1
+  uses: actions/setup-node@v4
   with:
-    node-version: '12.x'
+    node-version: 20
 - name: Install Appium
   uses: FinbertMDS/setup-appium@latest
   with:
